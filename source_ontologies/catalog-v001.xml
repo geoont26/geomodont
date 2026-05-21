@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="https://www.inf.ufrgs.br/bdi/ontologies/geocore/releases/2024-04-06/geocore.owl" uri="geocoreontology.owl"/>
+    <uri id="Imports Wizard Entry" name="http://purl.obolibrary.org/obo/bfo/2020/bfo-core.owl" uri="bfo-core.owl"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1779404913053" name="http://purl.obolibrary.org/obo/bfo/" uri="bfo-core.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1779404913053" name="http://www.geomod_ont.v0" uri="geomod_full.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1779404913053" name="https://www.inf.ufrgs.br/bdi/ontologies/geocore.owl" uri="geocoreontology.owl"/>
+    </group>
+</catalog>
