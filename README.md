@@ -32,6 +32,23 @@ To ensure semantic interoperability and robust domain logic, GeoMod is structura
 4. (Optional) Fire up the **HermiT** or **Pellet** reasoner inside Protégé to execute and review the conceptual validation rules.
 
 ---
+### synthetic test
+The file test.owl presents a simple example on how to use geomodont to verify inforamtion of a geological model.
+
+If:
+- G is an Intrusive Magmatic Unit
+- Outer G is Magmatic Intrusive Outer Surface  
+- Outer G  is Boundary-of  G
+
+- E is an Erosion Surface
+- Outer G interrupts E (Boundary/Boundary Topological Relation)
+
+- U is an Elementary Depositional Unit  
+- H is a Stratigraphic Horizon
+- H is ChronoTop of U
+
+Then:
+- G is younger than U  (Unit/Unit Age Relation)
 
 ## 📂 Repository Structure
 ```text
