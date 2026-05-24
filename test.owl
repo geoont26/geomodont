@@ -1,0 +1,1759 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.geomod_ont.v0#"
+     xml:base="http://www.geomod_ont.v0"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#">
+    <owl:Ontology rdf:about="http://www.geomod_ont.v0"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000051 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000051">
+        <rdfs:comment>BFO relation</rdfs:comment>
+        <rdfs:label>hasPart</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000196 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000196">
+        <rdfs:comment>a BFO relation &apos;bearer of&apos;</rdfs:comment>
+        <rdfs:label>hasQuality</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.geomod_ont.v0#boundaryBoundaryTopologicalRelation -->
+
+    <owl:ObjectProperty rdf:about="http://www.geomod_ont.v0#boundaryBoundaryTopologicalRelation">
+        <rdfs:domain rdf:resource="http://www.geomod_ont.v0#GeologicalBoundary"/>
+        <rdfs:range rdf:resource="http://www.geomod_ont.v0#GeologicalBoundary"/>
+        <rdfs:comment>relates two GeoMod: Geological Boundaries  A -&gt; B </rdfs:comment>
+        <rdfs:label>boundary boundary topological relation</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.geomod_ont.v0#collocatedWith -->
+
+    <owl:ObjectProperty rdf:about="http://www.geomod_ont.v0#collocatedWith">
+        <rdfs:comment>A symmetric spatial relation between two BFO : independent Continuant  A and B, which specifies that A and B occupy the same BFO: Spatial Region .</rdfs:comment>
+        <rdfs:label>collocated with</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.geomod_ont.v0#hasBoundary -->
+
+    <owl:ObjectProperty rdf:about="http://www.geomod_ont.v0#hasBoundary">
+        <owl:inverseOf rdf:resource="http://www.geomod_ont.v0#isBoundaryOf"/>
+        <rdfs:domain rdf:resource="https://www.inf.ufrgs.br/bdi/ontologies/GEOCORE_0000001"/>
+        <rdfs:range rdf:resource="http://www.geomod_ont.v0#GeologicalBoundary"/>
+        <rdfs:comment>relates a GeoMod: Geological Boundary and a GeoMod: Geological Volume </rdfs:comment>
+        <rdfs:label>has boundary</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.geomod_ont.v0#inContactWith -->
+
+    <owl:ObjectProperty rdf:about="http://www.geomod_ont.v0#inContactWith">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geomod_ont.v0#GeologicalVolume"/>
+                    <rdf:Description rdf:about="https://www.inf.ufrgs.br/bdi/ontologies/GEOCORE_0000001"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geomod_ont.v0#GeologicalVolume"/>
+                    <rdf:Description rdf:about="https://www.inf.ufrgs.br/bdi/ontologies/GEOCORE_0000001"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:comment>a relation dentoing the existance of  contact between two geological objects or geological volumes</rdfs:comment>
+        <rdfs:label>in contact with</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.geomod_ont.v0#interrupts -->
+
+    <owl:ObjectProperty rdf:about="http://www.geomod_ont.v0#interrupts">
+        <rdfs:domain rdf:resource="http://www.geomod_ont.v0#GeologicalBoundary"/>
+        <rdfs:range rdf:resource="http://www.geomod_ont.v0#GeologicalBoundary"/>
+        <rdfs:comment>A and B share a 1D Spatial Region (Intersection Line L)
+L is located on the External Boundary of B
+L is not located on the External Boundary of A </rdfs:comment>
+        <rdfs:label>interrupts</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.geomod_ont.v0#isBoundaryOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.geomod_ont.v0#isBoundaryOf">
+        <rdfs:domain rdf:resource="http://www.geomod_ont.v0#GeologicalBoundary"/>
+        <rdfs:range rdf:resource="https://www.inf.ufrgs.br/bdi/ontologies/GEOCORE_0000001"/>
+        <rdfs:comment>relates a GeoMod: Geological Boundary and a GeoMod: Geological Volume </rdfs:comment>
+        <rdfs:label>is boundary of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.geomod_ont.v0#isChronoBottomOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.geomod_ont.v0#isChronoBottomOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.geomod_ont.v0#isBoundaryOf"/>
+        <rdfs:domain rdf:resource="http://www.geomod_ont.v0#StratigraphicHorizon"/>
+        <rdfs:range rdf:resource="http://www.geomod_ont.v0#StratigraphicDeposit"/>
+        <rdfs:comment>A relation between a GeoMod : Horizon H and a  GeoMod : Elementary Depositional Unit U, which designates H as the manifestation of the beginning  of the depositional process that generated U.</rdfs:comment>
+        <rdfs:label>is chrono bottom of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.geomod_ont.v0#isChronoTopOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.geomod_ont.v0#isChronoTopOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.geomod_ont.v0#isBoundaryOf"/>
+        <rdfs:domain rdf:resource="http://www.geomod_ont.v0#StratigraphicHorizon"/>
+        <rdfs:range rdf:resource="http://www.geomod_ont.v0#StratigraphicDeposit"/>
+        <rdfs:comment>A relation between a GeoMod : Horizon H and a  GeoMod : Elementary Depositional Unit U, which designates H as the manifestation of the end of the depositional process that generated U.</rdfs:comment>
+        <rdfs:label>is chronotop of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.geomod_ont.v0#meets -->
+
+    <owl:ObjectProperty rdf:about="http://www.geomod_ont.v0#meets">
+        <rdfs:domain rdf:resource="http://www.geomod_ont.v0#GeologicalBoundary"/>
+        <rdfs:range rdf:resource="http://www.geomod_ont.v0#GeologicalBoundary"/>
+        <rdfs:comment>a symmetric spatial relation between two
+Geological boundaries when they are in contact</rdfs:comment>
+        <rdfs:label>meets</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.geomod_ont.v0#polarizedTowards -->
+
+    <owl:ObjectProperty rdf:about="http://www.geomod_ont.v0#polarizedTowards">
+        <rdfs:domain rdf:resource="http://www.geomod_ont.v0#PolarizedBoundary"/>
+        <rdfs:range rdf:resource="https://www.inf.ufrgs.br/bdi/ontologies/GEOCORE_0000001"/>
+        <rdfs:comment>a relation between a polorized geological boundary and a geological object indicating that the polarized boundary is older than the object</rdfs:comment>
+        <rdfs:label>polarized towards</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.geomod_ont.v0#sameAgeAs -->
+
+    <owl:ObjectProperty rdf:about="http://www.geomod_ont.v0#sameAgeAs">
+        <rdfs:subPropertyOf rdf:resource="http://www.geomod_ont.v0#unitUnitAgeRelation"/>
+        <rdfs:comment>TI(A) is equals to TI(B)   (Allen relation) </rdfs:comment>
+        <rdfs:label>same age as</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.geomod_ont.v0#unitUnitAgeRelation -->
+
+    <owl:ObjectProperty rdf:about="http://www.geomod_ont.v0#unitUnitAgeRelation">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geomod_ont.v0#GeologicalBoundary"/>
+                    <rdf:Description rdf:about="https://www.inf.ufrgs.br/bdi/ontologies/GEOCORE_0000001"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geomod_ont.v0#GeologicalBoundary"/>
+                    <rdf:Description rdf:about="https://www.inf.ufrgs.br/bdi/ontologies/GEOCORE_0000001"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:comment>relates two GeoMod: Geological Units A -&gt; B </rdfs:comment>
+        <rdfs:label>unit unit age relation</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.geomod_ont.v0#youngerThan -->
+
+    <owl:ObjectProperty rdf:about="http://www.geomod_ont.v0#youngerThan">
+        <rdfs:subPropertyOf rdf:resource="http://www.geomod_ont.v0#unitUnitAgeRelation"/>
+        <rdfs:comment>TI(A) precedes TI(B)  (Allen relation) </rdfs:comment>
+        <rdfs:label>younger than</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/bdi/ontologies/geores/geores-full.owl/spatiallyDiscreteFrom -->
+
+    <owl:ObjectProperty rdf:about="https://www.inf.ufrgs.br/bdi/ontologies/geores/geores-full.owl/spatiallyDiscreteFrom">
+        <rdfs:comment>A symmetric spatial relation between two BFO : Independent Continuants which both do not share the same spatial region, either wholly or partially (Cicconetto et al ., 2020)</rdfs:comment>
+        <rdfs:label>spatially discrete from</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/bdi/ontologies/geores/geores-full.owl/spatiallyPartiallyOverlaps -->
+
+    <owl:ObjectProperty rdf:about="https://www.inf.ufrgs.br/bdi/ontologies/geores/geores-full.owl/spatiallyPartiallyOverlaps">
+        <rdfs:comment>A symetric spatial relation between two BFO : Independent Continuants in which both share a part of the spatial regions they occupy (Cicconetto et al ., 2020)</rdfs:comment>
+        <rdfs:label>spatially partially overlaps</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000019 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000019">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment>BFO quality</rdfs:comment>
+        <rdfs:label>quality</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000024 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000024">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment>bfo fiat object part</rdfs:comment>
+        <rdfs:label>fiat objet part</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000027 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000027">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment>bfo object aggregate</rdfs:comment>
+        <rdfs:label>object aggregate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000028 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000028">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment> BFO:3DSpatialRegion,</rdfs:comment>
+        <rdfs:label>3d spatial region</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000030 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000030">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+        <rdfs:comment>BFO  object</rdfs:comment>
+        <rdfs:label>object</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000031 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000031">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment>BFO: Generically Dependent Continuant</rdfs:comment>
+        <rdfs:label>Generically Dependent Continuant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000040 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000040">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment>BFO material Entity</rdfs:comment>
+        <rdfs:label>material entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000140 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000140">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment>BFO continuant fiat boundary</rdfs:comment>
+        <rdfs:label>continuant fiat boundary</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000145 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000145">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment>BFO relational quality</rdfs:comment>
+        <rdfs:label>relational Quality</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000146 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000146">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000140"/>
+        <rdfs:comment>BFO two-dimensional continuant fiat boundary</rdfs:comment>
+        <rdfs:label>two-dimensional continuant fiat boundary</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geomod_ont.v0#BoundaryBoundaryAgeRelation -->
+
+    <owl:Class rdf:about="http://www.geomod_ont.v0#BoundaryBoundaryAgeRelation">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000145"/>
+        <rdfs:comment>GeoMod: Boundary / Boundary Age Relation is a BFO: Relational Quality related to two GeoMod: Geological Boundaries, which specifies their relative age order (older_than /younger_than/same age_as)    </rdfs:comment>
+        <rdfs:label>boundary / boundary age relation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geomod_ont.v0#BoundaryBoundaryTopologicalRelation -->
+
+    <owl:Class rdf:about="http://www.geomod_ont.v0#BoundaryBoundaryTopologicalRelation">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000145"/>
+        <rdfs:comment>GeoMod: Boundary / Boundary Tolological Relation is BFO: Relational Quality related to two GeoMod: Geological Boundaries, which specifies their topological relations (disconnected/ interrupts/ splits). </rdfs:comment>
+        <rdfs:label>boundary/boundarytopological relation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geomod_ont.v0#ConformableStratigraphicContact -->
+
+    <owl:Class rdf:about="http://www.geomod_ont.v0#ConformableStratigraphicContact">
+        <rdfs:subClassOf rdf:resource="http://www.geomod_ont.v0#StratigraphicContact"/>
+        <rdfs:comment>GeoMod: Conformable Stratigraphic Contact is a specialization of GeoMod: Stratigraphic Contact, which relates two GeoMod: Depostional Units separated by a GeoMod: Stratigraphic Horizon, which is both the ChronoTop of the older Depositional Unit and the ChronoBottom of the younger Depositional Unit.  </rdfs:comment>
+        <rdfs:label>conformablestratigraphic contact</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geomod_ont.v0#ConformableUnitSuccession -->
+
+    <owl:Class rdf:about="http://www.geomod_ont.v0#ConformableUnitSuccession">
+        <rdfs:subClassOf rdf:resource="http://www.geomod_ont.v0#StratigraphicDeposit"/>
+        <rdfs:comment>GeoMod: Conformable Unit Succession is a GeoMod: Stratigraphic Deposit corresponding to a succession of Elementary Depositional Units in Stratigraphic Contact each over the other, which is in Unconformable Stratigraphic Contact or in Erosional Contact with other Geological Units.</rdfs:comment>
+        <rdfs:label>conformable unit succession</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geomod_ont.v0#ElementaryDepositionalUnit -->
+
+    <owl:Class rdf:about="http://www.geomod_ont.v0#ElementaryDepositionalUnit">
+        <rdfs:subClassOf rdf:resource="http://www.geomod_ont.v0#StratigraphicDeposit"/>
+        <rdfs:comment>GeoMod: Elementary Depositional Unit is a GeoMod: Stratigraphic Deposit which can be considered as a whole at the mapping scale. </rdfs:comment>
+        <rdfs:label>elementary depositional unit</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geomod_ont.v0#ErosionSurface -->
+
+    <owl:Class rdf:about="http://www.geomod_ont.v0#ErosionSurface">
+        <rdfs:subClassOf rdf:resource="http://www.geomod_ont.v0#PolarizedBoundary"/>
+        <rdfs:comment>GeoMod: Erosion Surface is a Polarized Boundary, which bounds a Geological Volume, which was submitted to an Erosional Process. It signals the Time Instant at which the Erosional Process ceased operating.     </rdfs:comment>
+        <rdfs:label>erosion surface</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geomod_ont.v0#ErosionalContact -->
+
+    <owl:Class rdf:about="http://www.geomod_ont.v0#ErosionalContact">
+        <rdfs:subClassOf rdf:resource="http://www.geomod_ont.v0#GeologicalVolumeContact"/>
+        <rdfs:comment>GeoMod: Erosional Contact is Contact is a specialization of GeoMod: Geological Volume Contact, which relates a younger GeoMod: Conformable Unit Stack and an older eroded GeoMod: Geological Volume separated by a GeoMod: Erosional Surface    </rdfs:comment>
+        <rdfs:label>erosional contact</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geomod_ont.v0#FaultSurface -->
+
+    <owl:Class rdf:about="http://www.geomod_ont.v0#FaultSurface">
+        <rdfs:subClassOf rdf:resource="http://www.geomod_ont.v0#TectonicBoundary"/>
+        <rdfs:comment>GeoMod: Faut Surface is a GeoMod: Tectonic Boundary associated to a faulting process, which splits former GeoCore: Geological Objects in two parts and displaces one of them with respect to the other.    </rdfs:comment>
+        <rdfs:label>fault surface</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geomod_ont.v0#GeologicalBlock -->
+
+    <owl:Class rdf:about="http://www.geomod_ont.v0#GeologicalBlock">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/bdi/ontologies/GEOCORE_0000001"/>
+        <rdfs:comment> GeoMod: Geological Block Is a GeoCore: Geological Object constituted by a continuous volume of GeoCore: Rock. It results from the partition of one former GeoCore: Geological Object by a late geological process (erosion or faulting).  </rdfs:comment>
+        <rdfs:label>geological block</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geomod_ont.v0#GeologicalBoundary -->
+
+    <owl:Class rdf:about="http://www.geomod_ont.v0#GeologicalBoundary">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000146"/>
+        <rdfs:comment>  GeoMod: Geological Boundary is “2D BFO Continuant Fiat Boundary corresponding to a physical discontinuity of any nature, located on the external surface of two or more Geological Objects. A GeoMod: Geological Boundary signals the Time Instant at which some Geological Process in which the Geological Volume participated, began or ceased operating   ”. </rdfs:comment>
+        <rdfs:label>geological boundary</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geomod_ont.v0#GeologicalBoundaryPart -->
+
+    <owl:Class rdf:about="http://www.geomod_ont.v0#GeologicalBoundaryPart">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000146"/>
+        <rdfs:comment>GeoMod: Geological Boundary Part is a 2D Continuant Fiat Boundary, which corresponds to a portion of GeoMod: Geological Boundary limited by its intersections with two other GeoMod: Geological Boundaries .   </rdfs:comment>
+        <rdfs:label>geological boundary part</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geomod_ont.v0#GeologicalObjectOuterBoundaryPart -->
+
+    <owl:Class rdf:about="http://www.geomod_ont.v0#GeologicalObjectOuterBoundaryPart">
+        <rdfs:subClassOf rdf:resource="http://www.geomod_ont.v0#ObjectOuterBoundaryFace"/>
+        <rdfs:comment>GeoMod: Geological Object Outer Boundary Part is an Outer Boundary Face of a GeoCore: Geological Object, which spatially partially overlaps a Geological Boundary bounding this Geological Object </rdfs:comment>
+        <rdfs:label>geological object outer boundary part</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geomod_ont.v0#GeologicalUnit -->
+
+    <owl:Class rdf:about="http://www.geomod_ont.v0#GeologicalUnit">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/bdi/ontologies/GEOCORE_0000001"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000196"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/bdi/ontologies/GEOCORE_0000003"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>GeoMod: Geological Unit Is a GeoCore: Geological Object defined at mapping scale, which is constituted by GeoCore: Rock. it is the result of a rock generating Geological Process: sediment deposition, magmatic intrusion or of metamorphism. </rdfs:comment>
+        <rdfs:label>geological unit</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geomod_ont.v0#GeologicalUnitAge -->
+
+    <owl:Class rdf:about="http://www.geomod_ont.v0#GeologicalUnitAge">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/bdi/ontologies/GEOCORE_0000003"/>
+        <rdfs:comment>GeoMod: Geological Unit Age is a GeoCore:  Geological Age attached to GeoMod: Geological Unit.  </rdfs:comment>
+        <rdfs:label>geological unit age</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geomod_ont.v0#GeologicalUnitPart -->
+
+    <owl:Class rdf:about="http://www.geomod_ont.v0#GeologicalUnitPart">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
+        <rdfs:comment>Geological Unit Part is GeoCore Geological Object corresponding to a portion of Geological Unit having some particular Quality (for instance a sandstone lens inside a shale layer).  </rdfs:comment>
+        <rdfs:label>geological unit part</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geomod_ont.v0#GeologicalVolume -->
+
+    <owl:Class rdf:about="http://www.geomod_ont.v0#GeologicalVolume">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000027"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/bdi/ontologies/GEOCORE_0000001"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>GeoMod: Geological Volume is a BFO: Object Aggregate generated by one or several GeoCore: Geological Processes.  The objects of the volume were created by the succession of Geological Processes that operated through geological time in the Spatial Region occupied by the Geological Volume,</rdfs:comment>
+        <rdfs:label>geological volume</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geomod_ont.v0#GeologicalVolumeContact -->
+
+    <owl:Class rdf:about="http://www.geomod_ont.v0#GeologicalVolumeContact">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/bdi/ontologies/GEOCORE_0000012"/>
+        <rdfs:comment>GeoMod: Geological Volume Contact is a GeoCore Geological Contact (BFO: Relational Quality) that relates two Geological Volumes, one being possibly older than the other, by sharing one face of their external boundary.</rdfs:comment>
+        <rdfs:label>geologicalvolumecontact</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geomod_ont.v0#MagmaticIntrusiveContact -->
+
+    <owl:Class rdf:about="http://www.geomod_ont.v0#MagmaticIntrusiveContact">
+        <rdfs:subClassOf rdf:resource="http://www.geomod_ont.v0#GeologicalVolumeContact"/>
+        <rdfs:comment>GeoMod : Magmatic Intrusive Contact is a Contact is a specialization of GeoMod: Geological Volume Contact, which relates a younger Magmatic Intrusive Geobody and an older intruded GeoMod: Geological Volume separated by a GeoMod: Magmatic Intrusive Outer Surface.        </rdfs:comment>
+        <rdfs:label>magmatic intrusive contact</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geomod_ont.v0#MagmaticIntrusiveGeobody -->
+
+    <owl:Class rdf:about="http://www.geomod_ont.v0#MagmaticIntrusiveGeobody">
+        <rdfs:subClassOf rdf:resource="http://www.geomod_ont.v0#GeologicalUnit"/>
+        <rdfs:comment>Magmatic Intrusive Geobody is a GeoMod: Geological Unit, which results from a magma intrusion process.   </rdfs:comment>
+        <rdfs:label>magmatic intrusive geobody</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geomod_ont.v0#MagmaticIntrusiveOuterSurface -->
+
+    <owl:Class rdf:about="http://www.geomod_ont.v0#MagmaticIntrusiveOuterSurface">
+        <rdfs:subClassOf rdf:resource="http://www.geomod_ont.v0#PolarizedBoundary"/>
+        <rdfs:comment>GeoMod: Magmatic Intrusive Outer Surface is a Polarized Boundary, which surrounds a Magmatic Intrusive Geobody. It signals the Time Instant at which magma ceased digesting the surrounding rocks.    </rdfs:comment>
+        <rdfs:label>magmatic intrusive outer surface</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geomod_ont.v0#ObjectOuterBoundary -->
+
+    <owl:Class rdf:about="http://www.geomod_ont.v0#ObjectOuterBoundary">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000146"/>
+        <rdfs:comment>GeoMod: Object Outer Boundary is a BFO 2D Continuant Fiat-Boundary, which designates the outer envelope of a BFO:  Object.  </rdfs:comment>
+        <rdfs:label>object outer boundary</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geomod_ont.v0#ObjectOuterBoundaryFace -->
+
+    <owl:Class rdf:about="http://www.geomod_ont.v0#ObjectOuterBoundaryFace">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000146"/>
+        <rdfs:comment>Object Outer Boundary Face is a BFO 2D Continuant Fiat-Boundary, which is Part of the Outer Boundary of a BFO: Object </rdfs:comment>
+        <rdfs:label>object outer boundary face</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geomod_ont.v0#Polarity -->
+
+    <owl:Class rdf:about="http://www.geomod_ont.v0#Polarity">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
+        <rdfs:comment>GeoMod: Polarity is a BFO: Quality inhering in Polarized Boundary. It is represented by a vector perpendicular to the boundary and oriented towards the younger bounded Geological Volume.   </rdfs:comment>
+        <rdfs:label>polarity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geomod_ont.v0#PolarizedBoundary -->
+
+    <owl:Class rdf:about="http://www.geomod_ont.v0#PolarizedBoundary">
+        <rdfs:subClassOf rdf:resource="http://www.geomod_ont.v0#GeologicalBoundary"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000196"/>
+                <owl:someValuesFrom rdf:resource="http://www.geomod_ont.v0#Polarity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.geomod_ont.v0#TectonicBoundary"/>
+        <rdfs:comment>GeoMod: Polarized Boundary is a GeoMod: Geological Boundary having differentiated faces, which respectively bound younger and older Geological Volumes.   </rdfs:comment>
+        <rdfs:label>polarized boundary</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geomod_ont.v0#StratigraphicContact -->
+
+    <owl:Class rdf:about="http://www.geomod_ont.v0#StratigraphicContact">
+        <rdfs:subClassOf rdf:resource="http://www.geomod_ont.v0#GeologicalVolumeContact"/>
+        <rdfs:comment>GeoMod: Stratigraphic Contact is a specialization of GeoMod: Geological Volume Contact that relates two GeoMod: Stratigraphic Deposits.   </rdfs:comment>
+        <rdfs:label>stratigraphic contact</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geomod_ont.v0#StratigraphicDeposit -->
+
+    <owl:Class rdf:about="http://www.geomod_ont.v0#StratigraphicDeposit">
+        <rdfs:subClassOf rdf:resource="http://www.geomod_ont.v0#GeologicalUnit"/>
+        <rdfs:comment>GeoMod: Stratigraphic Deposit is a GeoMod: Geological Unit generated by a continuous depositional process during a definite GeoCore: Geological Time Interval.  </rdfs:comment>
+        <rdfs:label>stratigraphic deposit</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geomod_ont.v0#StratigraphicHorizon -->
+
+    <owl:Class rdf:about="http://www.geomod_ont.v0#StratigraphicHorizon">
+        <rdfs:subClassOf rdf:resource="http://www.geomod_ont.v0#PolarizedBoundary"/>
+        <rdfs:comment>GeoMod: Stratigraphic Horizon is a GeoMod: Stratigraphic Surface which bounds one or two GeoMod: Stratigraphic Units and is related to these units by relations that designate it as their GeoMod: ChronoBottom or as their GeoMod: ChronoTop.  </rdfs:comment>
+        <rdfs:label>stratigraphic horizon</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geomod_ont.v0#StratigraphicOrganization -->
+
+    <owl:Class rdf:about="http://www.geomod_ont.v0#StratigraphicOrganization">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000031"/>
+        <rdfs:comment>GeoMod: Stratigraphic Organization is a BFO: Generically Dependent Continuant depending on GeoMod: Stratigraphic Deposit, which describes age and topological relationships inside a stratigraphic deposit. It is concretized in Stratigraphic Ranks and Geological Volume Contacts between the Depositional Stratigraphic Units of a GeoMod: Full Geological Object Set. A Stratigraphic Organization is usually represented as a Stratigraphic Column.   </rdfs:comment>
+        <rdfs:label>stratigraphic organization</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geomod_ont.v0#StratigraphicRank -->
+
+    <owl:Class rdf:about="http://www.geomod_ont.v0#StratigraphicRank">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
+        <rdfs:comment>GeoMod: Stratigraphic Rank is a BFO Quality inhering in GeoMod: Depositional Unit. It indicates the rank of this unit in the Stratigraphic Column that represents the geo-model Stratigraphic Organization.     </rdfs:comment>
+        <rdfs:label>stratigraphic rank</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geomod_ont.v0#StratigraphicUnitStack -->
+
+    <owl:Class rdf:about="http://www.geomod_ont.v0#StratigraphicUnitStack">
+        <rdfs:subClassOf rdf:resource="http://www.geomod_ont.v0#StratigraphicDeposit"/>
+        <rdfs:comment>GeoMod: Conformable Unit Stack is a GeoMod: Stratigraphic Deposit consisting in a set of superposed Conformable Unit Successions, corresponding to the continuum of sedimentation produced during the total time interval during which the depositional process is operating </rdfs:comment>
+        <rdfs:label>stratigraphic unit stack </rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geomod_ont.v0#StructuralOrganization -->
+
+    <owl:Class rdf:about="http://www.geomod_ont.v0#StructuralOrganization">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000031"/>
+        <rdfs:comment>GeoMod: Structural Organization is a BFO: Generically Dependent Continuant depending on GeoMod: Geological Volume, which describes GeoMod: Boundary/Boundary Age Relations and GeoMod: Boundary/Boundary Topological Relations inside this Geological Volume. </rdfs:comment>
+        <rdfs:label>structural organization</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geomod_ont.v0#TectonicBoundary -->
+
+    <owl:Class rdf:about="http://www.geomod_ont.v0#TectonicBoundary">
+        <rdfs:subClassOf rdf:resource="http://www.geomod_ont.v0#GeologicalBoundary"/>
+        <rdfs:comment>GeoMod: Tectonic Boundary is a Geological Boundary attached to a Geological Volume, which was submitted to a faulting or thrusting  process. It signals the Time Instant at which this process ceased operating.  Tectonic Boundary and Polarized Boundary are disjoint classes. </rdfs:comment>
+        <rdfs:label>tectonic boundary</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geomod_ont.v0#TectonicContact -->
+
+    <owl:Class rdf:about="http://www.geomod_ont.v0#TectonicContact">
+        <rdfs:subClassOf rdf:resource="http://www.geomod_ont.v0#GeologicalVolumeContact"/>
+        <rdfs:comment>GeoMod : Tectonic Contact is Contact is a specialization of GeoMod: Geoligical Volume Contact which relates GeoMod : Geological Blocks created by some Faulting or Thrusting Process. These Geological Blocks are separated by the Tectonic Surface created by the Faulting or Thrusting Process.    </rdfs:comment>
+        <rdfs:label>tectonic contact</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geomod_ont.v0#ThrustSurface -->
+
+    <owl:Class rdf:about="http://www.geomod_ont.v0#ThrustSurface">
+        <rdfs:subClassOf rdf:resource="http://www.geomod_ont.v0#TectonicBoundary"/>
+        <rdfs:comment>GeoMod: Thrust Surface is a GeoMod: Tectonic Boundary associated to a t-thrusting process which laterally displaces and puts aside two GeoMod: Geological Volumes.    </rdfs:comment>
+        <rdfs:label>thrust surface</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geomod_ont.v0#UnconformableAboveStratigraphicContact -->
+
+    <owl:Class rdf:about="http://www.geomod_ont.v0#UnconformableAboveStratigraphicContact">
+        <rdfs:subClassOf rdf:resource="http://www.geomod_ont.v0#StratigraphicContact"/>
+        <rdfs:comment>Geo Mod:  Unconformable below Stratigraphic Contact is a specialization of GeoMod: Stratigraphic Contact, which relates an younger GeoMod: Conformable Unit Stack and and GeoMod: Depositional Unit, whose ChronoTop interrupts the GeoMod: Stratigraphic Horizons attached to the Conformable Unit Stack.  </rdfs:comment>
+        <rdfs:label>unconformable above stratigraphic contact</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geomod_ont.v0#UnconformableBelowStratigraphicContact -->
+
+    <owl:Class rdf:about="http://www.geomod_ont.v0#UnconformableBelowStratigraphicContact">
+        <rdfs:subClassOf rdf:resource="http://www.geomod_ont.v0#StratigraphicContact"/>
+        <rdfs:comment>Geo Mod:  Unconformable below Stratigraphic Contact is a specialization of GeoMod: Stratigraphic Contact, which relates an older GeoMod: Conformable Unit Stack and a younger GeoMod: Depositional Unit, whose ChronoBottom interrupts the GeoMod: Stratigraphic Horizons attached to the Conformable Unit Stack.  </rdfs:comment>
+        <rdfs:label>unconformable below stratigraphic contact</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geomod_ont.v0#UnitUnitAgeRelation -->
+
+    <owl:Class rdf:about="http://www.geomod_ont.v0#UnitUnitAgeRelation">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000145"/>
+        <rdfs:comment>GeoMod: Unit/Unit Age Relation is a BFO: Relational Quality related to two Geomod: Geological Units, which specifies their relative age order (older_than /younger_than/same age_as)    </rdfs:comment>
+        <rdfs:label>unit unitagerelation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geomod_ont.v0#VolumeOfInterest -->
+
+    <owl:Class rdf:about="http://www.geomod_ont.v0#VolumeOfInterest">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000028"/>
+        <rdfs:comment>GeoMod: Volume of Interest is a BFO: 3D Spatial Region, which designates the portion of space which is object of the modeling   </rdfs:comment>
+        <rdfs:label>volume of interest</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/bdi/ontologies/GEOCORE_0000001 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/bdi/ontologies/GEOCORE_0000001">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000030"/>
+        <rdfs:comment> GeoCore definition: Geological Object is a rigid entity that provides its own identity criteria and holds a unity criterion. A Geological Object is generated by at least one Geological Process.</rdfs:comment>
+        <rdfs:label>geological object</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/bdi/ontologies/GEOCORE_0000003 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/bdi/ontologies/GEOCORE_0000003">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
+        <rdfs:comment>GeoCore Geological Age</rdfs:comment>
+        <rdfs:label>geological age</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/bdi/ontologies/GEOCORE_0000012 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/bdi/ontologies/GEOCORE_0000012">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000145"/>
+        <rdfs:comment>A geological contact exists when two distinct geological objects are externally
+connected with, i.e., their external boundaries are physically adjacent. Objects that are in contact do not have any kind of proper parthood relationship between them.</rdfs:comment>
+        <rdfs:label>geological contact</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.geomod_ont.v0#e_ero_sur -->
+
+    <owl:NamedIndividual rdf:about="http://www.geomod_ont.v0#e_ero_sur">
+        <rdf:type rdf:resource="http://www.geomod_ont.v0#ErosionSurface"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.geomod_ont.v0#g_intru -->
+
+    <owl:NamedIndividual rdf:about="http://www.geomod_ont.v0#g_intru">
+        <rdf:type rdf:resource="http://www.geomod_ont.v0#MagmaticIntrusiveGeobody"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.geomod_ont.v0#h_hor -->
+
+    <owl:NamedIndividual rdf:about="http://www.geomod_ont.v0#h_hor">
+        <rdf:type rdf:resource="http://www.geomod_ont.v0#StratigraphicHorizon"/>
+        <isChronoTopOf rdf:resource="http://www.geomod_ont.v0#u_EDU"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.geomod_ont.v0#out_g -->
+
+    <owl:NamedIndividual rdf:about="http://www.geomod_ont.v0#out_g">
+        <rdf:type rdf:resource="http://www.geomod_ont.v0#MagmaticIntrusiveOuterSurface"/>
+        <interrupts rdf:resource="http://www.geomod_ont.v0#e_ero_sur"/>
+        <interrupts rdf:resource="http://www.geomod_ont.v0#h_hor"/>
+        <isBoundaryOf rdf:resource="http://www.geomod_ont.v0#g_intru"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.geomod_ont.v0#u_EDU -->
+
+    <owl:NamedIndividual rdf:about="http://www.geomod_ont.v0#u_EDU">
+        <rdf:type rdf:resource="http://www.geomod_ont.v0#ElementaryDepositionalUnit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.geomod_ont.v0#a">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.geomod_ont.v0#b">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.geomod_ont.v0#bb">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.geomod_ont.v0#aa">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.geomod_ont.v0#e">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.geomod_ont.v0#in">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.geomod_ont.v0#b_in">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.geomod_ont.v0#u_edu">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.geomod_ont.v0#u_edu_">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.geomod_ont.v0#b_edu">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.geomod_ont.v0#f">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.geomod_ont.v0#g">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.geomod_ont.v0#gg">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>if boundary interrupts it is younger</rdfs:comment>
+        <rdfs:label>S7</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.geomod_ont.v0#MagmaticIntrusiveGeobody"/>
+                        <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#in"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.geomod_ont.v0#hasBoundary"/>
+                                <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#in"/>
+                                <swrl:argument2 rdf:resource="http://www.geomod_ont.v0#b_in"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.geomod_ont.v0#ElementaryDepositionalUnit"/>
+                                        <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#u_edu"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.geomod_ont.v0#hasBoundary"/>
+                                                <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#u_edu_"/>
+                                                <swrl:argument2 rdf:resource="http://www.geomod_ont.v0#b_edu"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://www.geomod_ont.v0#interrupts"/>
+                                                        <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#b_in"/>
+                                                        <swrl:argument2 rdf:resource="http://www.geomod_ont.v0#b_edu"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.geomod_ont.v0#youngerThan"/>
+                        <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#in"/>
+                        <swrl:argument2 rdf:resource="http://www.geomod_ont.v0#u_edu"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>fault surface</rdfs:comment>
+        <rdfs:label>S6</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.geomod_ont.v0#FaultSurface"/>
+                        <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#f"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.geomod_ont.v0#GeologicalVolume"/>
+                                <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#a"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.geomod_ont.v0#youngerThan"/>
+                                        <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#f"/>
+                                        <swrl:argument2 rdf:resource="http://www.geomod_ont.v0#a"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.geomod_ont.v0#hasBoundary"/>
+                                                <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#a"/>
+                                                <swrl:argument2 rdf:resource="http://www.geomod_ont.v0#aa"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://www.geomod_ont.v0#meets"/>
+                                                        <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#f"/>
+                                                        <swrl:argument2 rdf:resource="http://www.geomod_ont.v0#aa"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.geomod_ont.v0#interrupts"/>
+                        <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#f"/>
+                        <swrl:argument2 rdf:resource="http://www.geomod_ont.v0#aa"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>Intrusive Contact</rdfs:comment>
+        <rdfs:label>S5</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.geomod_ont.v0#MagmaticIntrusiveGeobody"/>
+                        <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#g"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.geomod_ont.v0#GeologicalVolume"/>
+                                <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#b"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.geomod_ont.v0#youngerThan"/>
+                                        <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#g"/>
+                                        <swrl:argument2 rdf:resource="http://www.geomod_ont.v0#b"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.geomod_ont.v0#hasBoundary"/>
+                                                <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#g"/>
+                                                <swrl:argument2 rdf:resource="http://www.geomod_ont.v0#gg"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://www.geomod_ont.v0#hasBoundary"/>
+                                                        <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#b"/>
+                                                        <swrl:argument2 rdf:resource="http://www.geomod_ont.v0#bb"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                <swrl:propertyPredicate rdf:resource="http://www.geomod_ont.v0#meets"/>
+                                                                <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#g"/>
+                                                                <swrl:argument2 rdf:resource="http://www.geomod_ont.v0#bb"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.geomod_ont.v0#polarizedTowards"/>
+                        <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#gg"/>
+                        <swrl:argument2 rdf:resource="http://www.geomod_ont.v0#g"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>uncoformity below</rdfs:comment>
+        <rdfs:label>S2</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.geomod_ont.v0#ConformableUnitSuccession"/>
+                        <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#a"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.geomod_ont.v0#ElementaryDepositionalUnit"/>
+                                <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#b"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.geomod_ont.v0#youngerThan"/>
+                                        <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#b"/>
+                                        <swrl:argument2 rdf:resource="http://www.geomod_ont.v0#a"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.geomod_ont.v0#isChronoBottomOf"/>
+                                                <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#bb"/>
+                                                <swrl:argument2 rdf:resource="http://www.geomod_ont.v0#b"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                        <swrl:classPredicate rdf:resource="http://www.geomod_ont.v0#GeologicalBoundary"/>
+                                                        <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#aa"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                <swrl:propertyPredicate rdf:resource="http://www.geomod_ont.v0#hasBoundary"/>
+                                                                <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#a"/>
+                                                                <swrl:argument2 rdf:resource="http://www.geomod_ont.v0#aa"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                <rdf:first>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                        <swrl:propertyPredicate rdf:resource="http://www.geomod_ont.v0#meets"/>
+                                                                        <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#bb"/>
+                                                                        <swrl:argument2 rdf:resource="http://www.geomod_ont.v0#aa"/>
+                                                                    </rdf:Description>
+                                                                </rdf:first>
+                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.geomod_ont.v0#interrupts"/>
+                        <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#bb"/>
+                        <swrl:argument2 rdf:resource="http://www.geomod_ont.v0#aa"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.geomod_ont.v0#polarizedTowards"/>
+                                <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#aa"/>
+                                <swrl:argument2 rdf:resource="http://www.geomod_ont.v0#b"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.geomod_ont.v0#polarizedTowards"/>
+                                        <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#bb"/>
+                                        <swrl:argument2 rdf:resource="http://www.geomod_ont.v0#b"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>Unconformity above</rdfs:comment>
+        <rdfs:label>S3</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.geomod_ont.v0#ConformableUnitSuccession"/>
+                        <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#b"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.geomod_ont.v0#ElementaryDepositionalUnit"/>
+                                <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#a"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.geomod_ont.v0#youngerThan"/>
+                                        <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#b"/>
+                                        <swrl:argument2 rdf:resource="http://www.geomod_ont.v0#a"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                <swrl:classPredicate rdf:resource="http://www.geomod_ont.v0#GeologicalBoundary"/>
+                                                <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#bb"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://www.geomod_ont.v0#isChronoTopOf"/>
+                                                        <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#aa"/>
+                                                        <swrl:argument2 rdf:resource="http://www.geomod_ont.v0#a"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                <swrl:propertyPredicate rdf:resource="http://www.geomod_ont.v0#hasBoundary"/>
+                                                                <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#b"/>
+                                                                <swrl:argument2 rdf:resource="http://www.geomod_ont.v0#bb"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                <rdf:first>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                        <swrl:propertyPredicate rdf:resource="http://www.geomod_ont.v0#meets"/>
+                                                                        <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#bb"/>
+                                                                        <swrl:argument2 rdf:resource="http://www.geomod_ont.v0#aa"/>
+                                                                    </rdf:Description>
+                                                                </rdf:first>
+                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.geomod_ont.v0#interrupts"/>
+                        <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#aa"/>
+                        <swrl:argument2 rdf:resource="http://www.geomod_ont.v0#bb"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.geomod_ont.v0#polarizedTowards"/>
+                                <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#aa"/>
+                                <swrl:argument2 rdf:resource="http://www.geomod_ont.v0#b"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.geomod_ont.v0#polarizedTowards"/>
+                                        <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#bb"/>
+                                        <swrl:argument2 rdf:resource="http://www.geomod_ont.v0#b"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>Erosional Contact</rdfs:comment>
+        <rdfs:label>S4</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.geomod_ont.v0#GeologicalVolume"/>
+                        <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#a"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.geomod_ont.v0#ErosionSurface"/>
+                                <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#e"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.geomod_ont.v0#hasBoundary"/>
+                                        <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#a"/>
+                                        <swrl:argument2 rdf:resource="http://www.geomod_ont.v0#e"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                <swrl:classPredicate rdf:resource="http://www.geomod_ont.v0#ConformableUnitSuccession"/>
+                                                <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#b"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://www.geomod_ont.v0#youngerThan"/>
+                                                        <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#e"/>
+                                                        <swrl:argument2 rdf:resource="http://www.geomod_ont.v0#a"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                <swrl:propertyPredicate rdf:resource="http://www.geomod_ont.v0#youngerThan"/>
+                                                                <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#b"/>
+                                                                <swrl:argument2 rdf:resource="http://www.geomod_ont.v0#e"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                <rdf:first>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                        <swrl:propertyPredicate rdf:resource="http://www.geomod_ont.v0#hasBoundary"/>
+                                                                        <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#a"/>
+                                                                        <swrl:argument2 rdf:resource="http://www.geomod_ont.v0#aa"/>
+                                                                    </rdf:Description>
+                                                                </rdf:first>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                        <rdf:first>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                                <swrl:propertyPredicate rdf:resource="http://www.geomod_ont.v0#meets"/>
+                                                                                <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#e"/>
+                                                                                <swrl:argument2 rdf:resource="http://www.geomod_ont.v0#aa"/>
+                                                                            </rdf:Description>
+                                                                        </rdf:first>
+                                                                        <rdf:rest>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                                <rdf:first>
+                                                                                    <rdf:Description>
+                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                                        <swrl:propertyPredicate rdf:resource="http://www.geomod_ont.v0#hasBoundary"/>
+                                                                                        <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#b"/>
+                                                                                        <swrl:argument2 rdf:resource="http://www.geomod_ont.v0#bb"/>
+                                                                                    </rdf:Description>
+                                                                                </rdf:first>
+                                                                                <rdf:rest>
+                                                                                    <rdf:Description>
+                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                                        <rdf:first>
+                                                                                            <rdf:Description>
+                                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                                                <swrl:propertyPredicate rdf:resource="http://www.geomod_ont.v0#meets"/>
+                                                                                                <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#e"/>
+                                                                                                <swrl:argument2 rdf:resource="http://www.geomod_ont.v0#bb"/>
+                                                                                            </rdf:Description>
+                                                                                        </rdf:first>
+                                                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                                    </rdf:Description>
+                                                                                </rdf:rest>
+                                                                            </rdf:Description>
+                                                                        </rdf:rest>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.geomod_ont.v0#polarizedTowards"/>
+                        <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#bb"/>
+                        <swrl:argument2 rdf:resource="http://www.geomod_ont.v0#b"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.geomod_ont.v0#polarizedTowards"/>
+                                <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#e"/>
+                                <swrl:argument2 rdf:resource="http://www.geomod_ont.v0#b"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.geomod_ont.v0#interrupts"/>
+                                        <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#e"/>
+                                        <swrl:argument2 rdf:resource="http://www.geomod_ont.v0#bb"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.geomod_ont.v0#interrupts"/>
+                                                <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#e"/>
+                                                <swrl:argument2 rdf:resource="http://www.geomod_ont.v0#aa"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>conformity</rdfs:comment>
+        <rdfs:label>S1</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.geomod_ont.v0#ElementaryDepositionalUnit"/>
+                        <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#a"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.geomod_ont.v0#ElementaryDepositionalUnit"/>
+                                <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#b"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.geomod_ont.v0#youngerThan"/>
+                                        <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#b"/>
+                                        <swrl:argument2 rdf:resource="http://www.geomod_ont.v0#a"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.geomod_ont.v0#meets"/>
+                                                <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#bb"/>
+                                                <swrl:argument2 rdf:resource="http://www.geomod_ont.v0#aa"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://www.geomod_ont.v0#hasBoundary"/>
+                                                        <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#a"/>
+                                                        <swrl:argument2 rdf:resource="http://www.geomod_ont.v0#aa"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                <swrl:propertyPredicate rdf:resource="http://www.geomod_ont.v0#isChronoTopOf"/>
+                                                                <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#aa"/>
+                                                                <swrl:argument2 rdf:resource="http://www.geomod_ont.v0#a"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                <rdf:first>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                        <swrl:propertyPredicate rdf:resource="http://www.geomod_ont.v0#isChronoBottomOf"/>
+                                                                        <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#bb"/>
+                                                                        <swrl:argument2 rdf:resource="http://www.geomod_ont.v0#b"/>
+                                                                    </rdf:Description>
+                                                                </rdf:first>
+                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.geomod_ont.v0#collocatedWith"/>
+                        <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#aa"/>
+                        <swrl:argument2 rdf:resource="http://www.geomod_ont.v0#bb"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.geomod_ont.v0#polarizedTowards"/>
+                                <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#aa"/>
+                                <swrl:argument2 rdf:resource="http://www.geomod_ont.v0#b"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.geomod_ont.v0#polarizedTowards"/>
+                                        <swrl:argument1 rdf:resource="http://www.geomod_ont.v0#bb"/>
+                                        <swrl:argument2 rdf:resource="http://www.geomod_ont.v0#b"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
