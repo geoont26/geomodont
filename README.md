@@ -37,5 +37,7 @@ To ensure semantic interoperability and robust domain logic, GeoMod is structura
 ```text
 ├── LICENSE                 # Full text of the CC BY-SA 4.0 license
 ├── README.md               # This documentation file
-└── geomodont.owl           # The primary RDF/XML ontology code
-└── source_ontologies       # a folder with the geomodont importing BFO and geocore
+├──geomodont.owl           # The primary RDF/XML ontology code
+├── source_ontologies       # a folder with the geomodont importing BFO and geocore
+└── test.owl                # a simple test file
+
